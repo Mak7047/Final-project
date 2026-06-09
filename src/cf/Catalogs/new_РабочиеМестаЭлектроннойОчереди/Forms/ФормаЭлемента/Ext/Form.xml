@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="Склад" id="7">
+			<DataPath>Объект.Склад</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="СкладКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="НомерОкна" id="10">
+			<DataPath>Объект.НомерОкна</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="НомерОкнаКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="НомерОкнаРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<InputField name="ИдентификаторРабочегоМеста" id="32">
+			<DataPath>Объект.ИдентификаторРабочегоМеста</DataPath>
+			<Mask>9999</Mask>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ИдентификаторРабочегоМестаКонтекстноеМеню" id="33"/>
+			<ExtendedTooltip name="ИдентификаторРабочегоМестаРасширеннаяПодсказка" id="34"/>
+			<Events>
+				<Event name="OnChange">ИдентификаторРабочегоМестаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<Pages name="ГруппаСтраницы" id="35">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="36"/>
+			<ChildItems>
+				<Page name="ГруппаОператоры" id="37">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Операторы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа операторы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаОператорыРасширеннаяПодсказка" id="38"/>
+					<ChildItems>
+						<Table name="Операторы" id="13">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.Операторы</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ОператорыКонтекстноеМеню" id="14"/>
+							<AutoCommandBar name="ОператорыКоманднаяПанель" id="15"/>
+							<ExtendedTooltip name="ОператорыРасширеннаяПодсказка" id="16"/>
+							<SearchStringAddition name="ОператорыСтрокаПоиска" id="17">
+								<AdditionSource>
+									<Item>Операторы</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОператорыСтрокаПоискаКонтекстноеМеню" id="18"/>
+								<ExtendedTooltip name="ОператорыСтрокаПоискаРасширеннаяПодсказка" id="19"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ОператорыСостояниеПросмотра" id="20">
+								<AdditionSource>
+									<Item>Операторы</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОператорыСостояниеПросмотраКонтекстноеМеню" id="21"/>
+								<ExtendedTooltip name="ОператорыСостояниеПросмотраРасширеннаяПодсказка" id="22"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ОператорыУправлениеПоиском" id="23">
+								<AdditionSource>
+									<Item>Операторы</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ОператорыУправлениеПоискомКонтекстноеМеню" id="24"/>
+								<ExtendedTooltip name="ОператорыУправлениеПоискомРасширеннаяПодсказка" id="25"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ПользователиНомерСтроки" id="26">
+									<DataPath>Объект.Операторы.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПользователиНомерСтрокиКонтекстноеМеню" id="27"/>
+									<ExtendedTooltip name="ПользователиНомерСтрокиРасширеннаяПодсказка" id="28"/>
+								</LabelField>
+								<InputField name="ПользователиПользователь" id="29">
+									<DataPath>Объект.Операторы.Пользователь</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ПользователиПользовательКонтекстноеМеню" id="30"/>
+									<ExtendedTooltip name="ПользователиПользовательРасширеннаяПодсказка" id="31"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаСборщики" id="39">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сборщики</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа сборщики</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаСборщикиРасширеннаяПодсказка" id="40"/>
+					<ChildItems>
+						<Table name="Сборщики" id="41">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.Сборщики</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СборщикиКонтекстноеМеню" id="42"/>
+							<AutoCommandBar name="СборщикиКоманднаяПанель" id="43"/>
+							<ExtendedTooltip name="СборщикиРасширеннаяПодсказка" id="44"/>
+							<SearchStringAddition name="СборщикиСтрокаПоиска" id="45">
+								<AdditionSource>
+									<Item>Сборщики</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СборщикиСтрокаПоискаКонтекстноеМеню" id="46"/>
+								<ExtendedTooltip name="СборщикиСтрокаПоискаРасширеннаяПодсказка" id="47"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СборщикиСостояниеПросмотра" id="48">
+								<AdditionSource>
+									<Item>Сборщики</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СборщикиСостояниеПросмотраКонтекстноеМеню" id="49"/>
+								<ExtendedTooltip name="СборщикиСостояниеПросмотраРасширеннаяПодсказка" id="50"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СборщикиУправлениеПоиском" id="51">
+								<AdditionSource>
+									<Item>Сборщики</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СборщикиУправлениеПоискомКонтекстноеМеню" id="52"/>
+								<ExtendedTooltip name="СборщикиУправлениеПоискомРасширеннаяПодсказка" id="53"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="СборщикиНомерСтроки" id="54">
+									<DataPath>Объект.Сборщики.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СборщикиНомерСтрокиКонтекстноеМеню" id="55"/>
+									<ExtendedTooltip name="СборщикиНомерСтрокиРасширеннаяПодсказка" id="56"/>
+								</LabelField>
+								<InputField name="СборщикиПользователь" id="57">
+									<DataPath>Объект.Сборщики.Пользователь</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="СборщикиПользовательКонтекстноеМеню" id="58"/>
+									<ExtendedTooltip name="СборщикиПользовательРасширеннаяПодсказка" id="59"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.new_РабочиеМестаЭлектроннойОчереди</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>
