@@ -1,0 +1,26 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Электронная очередь - Уровень 2 - Контейнеры
+
+' Внешние системы
+System_Ext(MobileApp, "Мобильное приложение", "Мобильное приложение 1С")
+
+' Система 1С УП
+System_Boundary(1CUP, "1С УП", "Демонстрационное приложение"){
+Container(http_сервис, "HTTP-сервис", "new_ОбменЭлектроннаяОчередь", "Отдает данные электронной очереди")
+Container(1Cup_db, "База данных 1С УП", "PostgreSQL", "Хранит данные электронной очереди")
+Container(АРМ_ЭлОчередь, "АРМ Электронная очередь",, "Управляет электронной очередью")
+}
+
+' Связи внутри 1С УП
+Rel(http_сервис, 1Cup_db, "Извлекает данные электронной очереди")
+Rel(АРМ_ЭлОчередь, 1Cup_db, "Изменяет данные электронной очереди")
+
+' Внешние связи
+Rel(MobileApp, http_сервис, "Запрашивает данные электронной очереди (протокол http)")
+Rel(http_сервис, MobileApp, "Отдает данные электронной очереди (протокол http)")
+
+@enduml

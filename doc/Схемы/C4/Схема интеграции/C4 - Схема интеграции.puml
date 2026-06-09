@@ -1,0 +1,28 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title Схема интеграции 1С УП и Мобильного приложения 1С (Android TV)
+
+Person(operator, "Оператор выдачи", "Управляет очередью")
+Person(collector, "Сборщик", "Просматривает очередь")
+Person(client, "Клиент", "Смотрит статус заказа")
+
+System_Boundary(onec, "1С УП") {
+    Container(arm, "АРМ Электронная очередь", "Внешняя обработка 1С", "Управление статусами заказов")
+    Container(http_service, "HTTP-сервис", "new_ОбменЭлектроннаяОчередь", "Отдает данные очереди по HTTP")
+    Container(db, "База данных", "PostgreSQL", "Хранит документы и регистр сведений ЭО")
+}
+
+System_Ext(mobile, "Мобильное приложение 1С", "Android TV", "Отображает очередь, HTTP-клиент")
+
+Rel(operator, arm, "Изменяет статусы")
+Rel(collector, arm, "Просматривает")
+Rel(arm, db, "Читает/пишет")
+
+Rel(mobile, http_service, "GET /GetListOfOrders", "HTTP JSON (каждые 10 секунд)")
+Rel(http_service, db, "Извлекает данные", "SQL")
+Rel(http_service, mobile, "Возвращает ответ HTTP JSON")
+
+Rel(client, mobile, "Смотрит статус")
+
+@enduml
